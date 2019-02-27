@@ -34,7 +34,7 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
-        showToolbar("Home", false, view);
+        showToolbar(getString(R.string.home), false, view);
         RecyclerView picturesRecycler = view.findViewById(R.id.pictureRecycler);
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
@@ -51,9 +51,9 @@ public class HomeFragment extends Fragment {
 
     public ArrayList<Picture> buildPictures () {
         ArrayList<Picture> pictures = new ArrayList<>();
-        pictures.add(new Picture("http://novalandtours.com/images/guide/guilin.jpg", "Luis Machado", "4 dias", "3"));
-        pictures.add(new Picture("http://novalandtours.com/images/guide/guilin.jpg", "Luis Zorrilla", "5 dias", "10"));
-        pictures.add(new Picture("http://novalandtours.com/images/guide/guilin.jpg", "Luis Machado", "3 dias", "5"));
+        pictures.add(new Picture("https://www.novalandtours.com/images/temp_img/for-missing.jpg", "Luis Machado", "4 days", "3 likes"));
+        pictures.add(new Picture("https://www.novalandtours.com/images/Gangwon/Sokcho/Naksansa%20Temple", "Luis Zorrilla", "5 days", "10 likes"));
+        pictures.add(new Picture("https://i.imgur.com/MnNG2ay.jpg", "Luis Machado", "3 days", "5 likes"));
         return pictures;
     }
 
