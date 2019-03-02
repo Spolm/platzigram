@@ -1,6 +1,7 @@
 package com.spolm.platzigram.adapter;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 
 import com.spolm.platzigram.R;
 import com.spolm.platzigram.model.Picture;
+import com.spolm.platzigram.view.PictureDetailActivity;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -41,6 +43,15 @@ public class PictureAdapterRecyclerView extends RecyclerView.Adapter<PictureAdap
         pictureViewHolder.timeCard.setText(picture.getTime());
         pictureViewHolder.likeNumberCard.setText(picture.getLike_number());
         Picasso.get().load(picture.getPicture()).into(pictureViewHolder.pictureCard);
+
+        pictureViewHolder.pictureCard.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activity, PictureDetailActivity.class);
+                activity.startActivity(intent);
+            }
+        });
+
     }
 
     @Override
